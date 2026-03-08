@@ -17,7 +17,7 @@
 
 	async function copyLink() {
 		const baseUrl = window.location.origin;
-		const url = `${baseUrl}/show?m=${messageIndex}`;
+		const url = `${baseUrl}/?m=${messageIndex}`;
 		await navigator.clipboard.writeText(url);
 		copied = true;
 		setTimeout(() => {

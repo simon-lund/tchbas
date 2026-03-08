@@ -1,14 +1,10 @@
 <script lang="ts">
-	import { OS_INSTRUCTIONS, detectOS } from '$lib/constants';
+	import { OS_INSTRUCTIONS } from '$lib/constants';
 	import * as Tabs from '$lib/components/ui/tabs';
-	import { onMount } from 'svelte';
+	import { page } from '$app/state';
 	import { AppleIcon, TerminalIcon, MonitorIcon, GlobeIcon, type Icon } from '@lucide/svelte';
 
-	let defaultOS = $state('windows');
-
-	onMount(() => {
-		defaultOS = detectOS();
-	});
+	let defaultOS = $state(page.data.os || 'windows');
 
 	const icons: Record<string, typeof Icon> = {
 		windows: MonitorIcon,

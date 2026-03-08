@@ -87,9 +87,12 @@ export const OS_INSTRUCTIONS: OSInstruction[] = [
 /**
  * Detect user's OS from user agent
  */
-export function detectOS(): string {
-	if (typeof window === 'undefined') return 'windows';
-	const ua = window.navigator.userAgent.toLowerCase();
+export function detectOS(userAgent?: string): string {
+	const ua = (
+		userAgent || (typeof window !== 'undefined' ? window.navigator.userAgent : '')
+	).toLowerCase();
+	if (!ua) return 'windows'; // Default fallback
+
 	if (ua.includes('win')) return 'windows';
 	if (ua.includes('mac')) return 'macos';
 	if (ua.includes('linux')) return 'linux';
