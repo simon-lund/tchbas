@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { SunIcon, MoonIcon } from "@lucide/svelte"
-	import { mode, toggleMode } from "mode-watcher";
-	import { Toggle } from "$lib/components/ui/toggle/index.js";
+	import { SunIcon, MoonIcon } from '@lucide/svelte';
+	import { mode, toggleMode } from 'mode-watcher';
+	import { Toggle } from '$lib/components/ui/toggle/index.js';
 </script>
 
 <Toggle
 	variant="outline"
 	size="sm"
-	pressed={mode?.current === "dark"}
+	pressed={mode?.current === 'dark'}
 	onPressedChange={toggleMode}
 	aria-label="Toggle theme"
 >

@@ -28,22 +28,21 @@
 
 <div class="mt-16 w-full max-w-2xl">
 	<div class="mb-4 flex items-center justify-between">
-		<h2 class="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500">
-			Configurator
-		</h2>
+		<h2 class="text-xs font-bold tracking-[0.2em] text-neutral-500 uppercase">Configurator</h2>
 	</div>
 
 	<!-- Configurator Card -->
 	<Card.Root class="overflow-hidden border-none bg-neutral-100 p-1">
-		<Card.Content class="flex flex-col items-center gap-10 bg-neutral-100 p-12 text-neutral-900 rounded-[calc(var(--radius)-1px)] overflow-hidden">
-
+		<Card.Content
+			class="flex flex-col items-center gap-10 overflow-hidden rounded-[calc(var(--radius)-1px)] bg-neutral-100 p-12 text-neutral-900"
+		>
 			<!-- Message Display with Transition - using grid to prevent layout shift -->
-			<div class="w-full text-center min-h-[100px] grid">
+			<div class="grid min-h-[100px] w-full text-center">
 				{#key messageIndex}
 					<blockquote
 						in:fly={{ y: 20, duration: 400, delay: 100 }}
 						out:fade={{ duration: 200 }}
-						class="col-start-1 row-start-1 flex items-center justify-center text-2xl font-medium italic leading-relaxed md:text-3xl text-balance text-center m-0"
+						class="col-start-1 row-start-1 m-0 flex items-center justify-center text-center text-2xl leading-relaxed font-medium text-balance italic md:text-3xl"
 					>
 						"{ROAST_MESSAGES[messageIndex]}"
 					</blockquote>
@@ -58,9 +57,11 @@
 							variant="default"
 							size="icon"
 							onclick={rotateMessage}
-							class="h-14 w-14 bg-black text-white hover:bg-black/90 active:scale-95 shadow-lg group"
+							class="group h-14 w-14 bg-black text-white shadow-lg hover:bg-black/90 active:scale-95"
 						>
-							<RefreshCw class="h-6 w-6 transition-transform duration-500 group-active:rotate-180" />
+							<RefreshCw
+								class="h-6 w-6 transition-transform duration-500 group-active:rotate-180"
+							/>
 						</Button>
 					</Tooltip.Trigger>
 					<Tooltip.Content>
@@ -72,7 +73,7 @@
 					onclick={copyLink}
 					disabled={copied}
 					variant="default"
-					class="h-14 bg-black px-10 text-lg font-bold text-white transition-all hover:bg-black/90 hover:scale-[1.02] active:scale-95 disabled:bg-neutral-400 disabled:text-neutral-100 shadow-lg"
+					class="h-14 bg-black px-10 text-lg font-bold text-white shadow-lg transition-all hover:scale-[1.02] hover:bg-black/90 active:scale-95 disabled:bg-neutral-400 disabled:text-neutral-100"
 				>
 					{#if copied}
 						<Check class="mr-3 h-6 w-6" />
