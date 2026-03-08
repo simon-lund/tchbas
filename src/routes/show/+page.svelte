@@ -1,0 +1,40 @@
+<script lang="ts">
+	import { fade } from 'svelte/transition';
+	import ScreenshotInstructions from '$lib/components/ScreenshotInstructions.svelte';
+
+	let { data } = $props();
+</script>
+
+<svelte:head>
+	<title>{data.message} | This Could've Been a Screenshot</title>
+	<meta name="description" content={data.message} />
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="This Could've Been a Screenshot" />
+	<meta property="og:description" content={data.message} />
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="This Could've Been a Screenshot" />
+	<meta name="twitter:description" content={data.message} />
+</svelte:head>
+
+<main class="relative z-10 flex min-h-screen flex-col items-center px-6 pb-32 pt-24">
+	<!-- Header -->
+	<p class="text-xl font-medium tracking-tight text-muted-foreground">This Could've Been a Screenshot</p>
+
+	<!-- Roast Message -->
+	<div class="mt-4 flex min-h-[140px] items-center justify-center px-4 py-10 text-center">
+		{#key data.message}
+			<h1
+				in:fade={{ duration: 300, delay: 100 }}
+				class="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance lg:text-5xl text-center max-w-4xl italic"
+			>
+				"{data.message}"
+			</h1>
+		{/key}
+	</div>
+
+	<ScreenshotInstructions />
+</main>
