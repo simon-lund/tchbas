@@ -1,42 +1,37 @@
-# sv
+# TCHBAS — This Could've Been a Screenshot
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Stop the screen-photo pandemic. **TCHBAS** is a web utility for sending
+ironically positive reminders to people who still take photos of their
+monitors.
 
-## Creating a project
+- **Witty Irony**: 15+ custom-crafted, "optimistic" messages about the artistic
+  merits of screen photos.
+- **Instructions**: Automatically detects the user's OS to show
+  exactly how to take a real screenshot.
+- **Rich Social Previews**: Dynamic Open Graph metadata so roasts look great
+  when shared.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 🚀 Getting Started
 
-```sh
-# create a new project
-npx sv create my-app
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
 ```
 
-To recreate this project with the same configuration:
+## 🛠️ Tech Stack
 
-```sh
-# recreate this project
-pnpm dlx sv create --template minimal --types ts --add prettier eslint tailwindcss="plugins:none" sveltekit-adapter="adapter:static" devtools-json --install pnpm tchbas
-```
+- **Framework**: Svelte 5 / SvelteKit
+- **Styling**: Vanilla CSS / Tailwind 4
+- **Components**: shadcn/ui
+- **Icons**: Lucide Svelte
 
-## Developing
+## 💡 Why?
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Because we've all seen that one photo where you can see the reflection of a
+ceiling fan and the dust on the monitor. TCHBAS is here to help humanity
+discover the clinical, dust-free perfection of the `Print Screen` key.
 
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Inspired by _lmgtfy_.
