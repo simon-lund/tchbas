@@ -6,7 +6,6 @@
 	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import { onMount } from 'svelte';
 
 	let { children } = $props();
 

@@ -4,9 +4,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip';
 	import * as Card from '$lib/components/ui/card';
-	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
-	import Link from '@lucide/svelte/icons/link';
-	import Check from '@lucide/svelte/icons/check';
+	import { RefreshCwIcon, LinkIcon, CheckIcon} from '@lucide/svelte';
 
 	let messageIndex = $state(Math.floor(Math.random() * ROAST_MESSAGES.length));
 	let copied = $state(false);
@@ -59,7 +57,7 @@
 							onclick={rotateMessage}
 							class="group h-14 w-14 bg-black text-white shadow-lg hover:bg-black/90 active:scale-95"
 						>
-							<RefreshCw
+							<RefreshCwIcon
 								class="h-6 w-6 transition-transform duration-500 group-active:rotate-180"
 							/>
 						</Button>
@@ -76,10 +74,10 @@
 					class="h-14 bg-black px-10 text-lg font-bold text-white shadow-lg transition-all hover:scale-[1.02] hover:bg-black/90 active:scale-95 disabled:bg-neutral-400 disabled:text-neutral-100"
 				>
 					{#if copied}
-						<Check class="mr-3 h-6 w-6" />
+						<CheckIcon class="mr-3 h-6 w-6" />
 						Copied Link
 					{:else}
-						<Link class="mr-3 h-6 w-6" />
+						<LinkIcon class="mr-3 h-6 w-6" />
 						Copy Link
 					{/if}
 				</Button>
