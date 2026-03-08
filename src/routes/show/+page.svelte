@@ -1,4 +1,5 @@
 <script lang="ts">
+	import {page} from '$app/state';
 	import { fade } from 'svelte/transition';
 	import ScreenshotInstructions from '$lib/components/ScreenshotInstructions.svelte';
 
@@ -13,11 +14,13 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="This Could've Been a Screenshot" />
 	<meta property="og:description" content={data.message} />
-	
+	<meta property="og:image" content="{page.url.origin}/api/og?m={data.messageIndex}" />
+
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="This Could've Been a Screenshot" />
 	<meta name="twitter:description" content={data.message} />
+	<meta name="twitter:image" content="{page.url.origin}/api/og?m={data.messageIndex}" />
 </svelte:head>
 
 <main class="relative z-10 flex min-h-screen flex-col items-center px-6 pt-24 pb-32">
